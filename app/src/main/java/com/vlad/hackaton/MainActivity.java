@@ -80,30 +80,4 @@ public class MainActivity extends AppCompatActivity {
 
         Miner game = new Miner(buttons, this);
     }
-
-//    public void dpsRequest(int x, int y) {
-//        Log.d(TAG, "dps on " + x + " " + y);
-//
-//        if (x >= 1 && x <= 6 && y >= 1 && y <= 6 && buttons[x][y].isEnabled()) {
-//            for (Pair mine : mines) {
-//                if (x != (Integer) mine.first && y != (Integer) mine.second) {
-//                    buttons[x - 1][y - 1].setBackgroundColor(Color.GRAY);
-//                    buttons[x - 1][y -1 ].setEnabled(false);
-//                }
-//            }
-//        }
-//        else return;
-//
-//        dpsRequest(x - 1, y - 1);
-//        dpsRequest(x, y - 1);
-//        dpsRequest(x + 1, y - 1);
-//
-//        dpsRequest(x - 1, y);
-//        dpsRequest(x + 1, y);
-//
-//        dpsRequest(x - 1, y + 1);
-//        dpsRequest(x, y + 1);
-//        dpsRequest(x + 1, y + 1);
-//
-//    }
 }
