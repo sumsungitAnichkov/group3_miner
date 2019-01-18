@@ -10,6 +10,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Miner {
     private static final String TAG = "MINER";
@@ -26,17 +27,24 @@ public class Miner {
 
     Context context;
 
+    void generateMines() {
+        Random generator = new Random();
+        for (int i = 0; i < minesCount; i++) {
+            int x = generator.nextInt(6), y = generator.nextInt(6);
+
+            if (!mineField.contains(new Pair<>(x, y)))
+                mineField.add(new Pair<>(x, y));
+            else
+                i--;
+        }
+    }
+
     public Miner(Button[][] buttons, Context context) {
         Log.d(TAG, "game init");
 
         this.context = context;
 
-        mineField.add(new Pair<Integer, Integer>(0, 0));
-        mineField.add(new Pair<Integer, Integer>(1, 1));
-        mineField.add(new Pair<Integer, Integer>(2, 2));
-        mineField.add(new Pair<Integer, Integer>(3, 3));
-        mineField.add(new Pair<Integer, Integer>(4, 4));
-        mineField.add(new Pair<Integer, Integer>(5, 5));
+        generateMines();
 
         fieldH = buttons.length;
         fieldW = buttons[0].length;
